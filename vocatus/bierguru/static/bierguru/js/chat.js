@@ -53,7 +53,7 @@ async function sendMessage() {
     }
 
     const data = await resp.json();
-    appendLine("Vocatus", data.answer || "(geen antwoord)");
+    appendLine("Bierguru", data.answer || "(geen antwoord)");
   } catch (e) {
     appendLine("Fout", e.toString());
   } finally {

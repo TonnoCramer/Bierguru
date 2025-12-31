@@ -5,12 +5,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vocatus AI Chat</title>
+    <title> Chat</title>
     <link rel="stylesheet" href="{% static 'bierguru/css/chat.css' %}" />
   </head>
   <body>
     {% csrf_token %}
-    <h1>Vocatus AI</h1>
+    <header class="app-header">
+      <h1>🍺 Bierguru</h1>
+    </header>
 
     <div class="card">
       <div id="chat"></div>
@@ -19,7 +21,7 @@
         <input
           id="msg"
           type="text"
-          placeholder="Bijv. Welke IPA past bij een Black IPA liefhebber?"
+          placeholder="Vraag het bierguru 🍺"
         />
         <button id="send" type="button">Verzenden</button>
       </div>
