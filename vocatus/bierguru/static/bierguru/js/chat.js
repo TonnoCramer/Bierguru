@@ -43,7 +43,8 @@ function appendBubble(role, text) {
   const shouldStick = isNearBottom(chatBox);
 
   const wrap = document.createElement("div");
-  wrap.className = role === "user" ? "flex justify-end" : "flex justify-start";
+  // zowel user als assistant links uitlijnen
+  wrap.className = "flex justify-start";
 
   const bubble = document.createElement("div");
   if (role === "user") {
@@ -69,7 +70,8 @@ function setDisabled(disabled) {
 
 function autogrow(el) {
   el.style.height = "auto";
-  el.style.height = Math.min(el.scrollHeight, 180) + "px";
+  // geen max => geen scrollbar
+  el.style.height = el.scrollHeight + "px";
 }
 
 async function sendMessage() {
@@ -115,6 +117,7 @@ sendBtn.addEventListener("click", sendMessage);
 input.addEventListener("input", () => autogrow(input));
 
 input.addEventListener("keydown", (e) => {
+  // Enter = verzenden, Shift+Enter = newline
   if (e.key === "Enter" && !e.shiftKey) {
     e.preventDefault();
     sendMessage();

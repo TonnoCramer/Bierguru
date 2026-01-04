@@ -42,14 +42,13 @@
       data-chat-endpoint="{% url 'vocatus_chat' %}"
       class="min-h-dvh flex flex-col"
     >
-      <!-- Header -->
-      <header class="sticky top-0 z-10 bg-brand-orange text-white shadow-sm">
-        <div class="mx-auto w-full max-w-3xl px-3 sm:px-4 py-3 flex items-center justify-between">
-          <h1 class="text-base sm:text-lg font-semibold tracking-tight">
-            🍺 Bierguru
-          </h1>
-          <div class="text-xs sm:text-sm opacity-90">
-            Rustig bieradvies, zonder poeha
+      <!-- Header (zelfde breedte als card) -->
+      <header class="pt-3 px-3 sm:px-4">
+        <div class="mx-auto w-full max-w-3xl">
+          <div class="bg-brand-orange text-white rounded-2xl shadow-sm px-4 sm:px-5 py-3 flex items-center justify-center">
+            <h1 class="text-base sm:text-lg font-semibold tracking-tight">
+              🍺 Bierguru
+            </h1>
           </div>
         </div>
       </header>
@@ -57,33 +56,23 @@
       <!-- Main card -->
       <main class="mx-auto w-full max-w-3xl px-3 sm:px-4 py-4 flex-1 flex">
         <section class="w-full bg-white/80 backdrop-blur rounded-2xl border border-black/10 shadow-sm flex flex-col overflow-hidden">
-          <!-- Intro -->
-          <div class="px-4 sm:px-5 py-3 border-b border-black/10 bg-white">
-            <p class="text-sm sm:text-base">
-              Stel je vraag. Kort antwoord, nuchter advies.
-            </p>
-          </div>
 
           <!-- Messages -->
           <div
             id="chat"
-            class="flex-1 overflow-y-auto px-3 sm:px-5 py-4 space-y-3"
+            class="flex-1 overflow-y-auto px-3 sm:px-5 py-4 space-y-3 bg-brand-cream/70"
             aria-live="polite"
             aria-label="Chatgesprek"
           ></div>
 
           <!-- Composer -->
-          <div class="border-t border-black/10 bg-white p-3 sm:p-4">
+          <div class="border-t border-brand-orange bg-white p-3 sm:p-4">
             <div class="flex flex-col gap-2">
-              <label for="msg" class="text-xs sm:text-sm text-black/70">
-                Tip: Enter = verzenden, Shift+Enter = nieuwe regel
-              </label>
-
               <div class="flex flex-col sm:flex-row gap-2">
                 <textarea
                   id="msg"
                   rows="1"
-                  class="w-full resize-none rounded-xl border border-black/10 bg-brand-cream/70 px-3 py-3 text-base outline-none focus:ring-2 focus:ring-brand-orange/40 focus:border-brand-orange/40"
+                  class="w-full resize-none overflow-hidden rounded-xl border border-black/10 bg-brand-cream/70 px-3 py-3 text-base outline-none focus:ring-2 focus:ring-brand-orange/40 focus:border-brand-orange/40"
                   placeholder="Vraag het de Bierguru 🍺"
                 ></textarea>
 
