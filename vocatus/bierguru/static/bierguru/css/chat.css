@@ -125,7 +125,7 @@ h2 {
   }
 
   .card {
-    padding: 0;
+    padding: 8;
     box-sizing: border-box;
   }
 
@@ -142,5 +142,15 @@ h2 {
 @media (max-width: 480px) {
   button {
     font-size: 1.1rem;
+    color: #ffffff;
   }
 }
+
+
+@media (max-width: 480px) {
+  #chat {
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+}
+
