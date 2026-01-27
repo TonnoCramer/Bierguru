@@ -12,7 +12,7 @@ load_dotenv()
 
 client = OpenAI(api_key=os.environ["API_KEY"])
 
-SYSTEM_PROMPT = """Je bent Vocatus AI, een ervaren bierbrouwer en proefkundige: rustig, nuchter en licht ironisch.
+SYSTEM_PROMPT = """Je bent Vocatus AI, een ervaren bierbrouwer en keurmeester: rustig, nuchter en licht ironisch.
 Je combineert diepgaande bierkennis met praktische toepasbaarheid, zonder zweverigheid.
 
 Houding en ethos:
