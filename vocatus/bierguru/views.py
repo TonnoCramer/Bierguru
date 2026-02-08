@@ -1,17 +1,19 @@
 import json
 from django.http import JsonResponse
 from django.shortcuts import render
-#from django_ratelimit.decorators import ratelimit
+from django_ratelimit.decorators import ratelimit
 
 
 
 from .utils import ask_vocatus
-from .models import AIRequestLog
+from .models import AIRequestLog, ChatMessage
+
+
 
 
 # Create your views here.
-#@ratelimit(key="user", rate="1500/d", block=True)
-#@ratelimit(key="ip", rate="10/m", block=True)
+@ratelimit(key="user", rate="1500/d", block=True)
+@ratelimit(key="ip", rate="10/m", block=True)
 def vocatus_chat(request):
     """
     Ontvangt een chatbericht en geeft AI-antwoord terug als JSON.
@@ -50,6 +52,14 @@ def vocatus_chat(request):
         input_tokens=cost_info["input_tokens"],
         output_tokens=cost_info["output_tokens"],
         request_cost=cost_info["request_cost"],
+    )
+    
+    # chat inhoud loggen
+    ChatMessage.objects.create(
+        user=request.user if request.user.is_authenticated else None,
+        session_key=request.session.session_key,
+        user_message=user_input,
+        assistant_message=answer,
     )
 
     return JsonResponse({
