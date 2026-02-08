@@ -22,4 +22,7 @@ rag_source/
 rag_store/
 *.faiss
 
+# lokale tools / rommel
+png_ico_conv/
+*_vps.py
 
