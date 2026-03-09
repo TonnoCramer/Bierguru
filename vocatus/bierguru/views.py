@@ -12,6 +12,15 @@ from .models import AIRequestLog, ChatMessage
 
 
 # Create your views here.
+def home_page(request):
+    # Renders the temporary "Bierguru is away on a study trip" landing page.
+    return render(request, "bierguru/home.html")
+
+def privacy_page(request):
+    # Renders the privacy page linked from the temporary landing page.
+    return render(request, "bierguru/privacy.html")
+
+
 @ratelimit(key="user", rate="1500/d", block=True)
 @ratelimit(key="ip", rate="10/m", block=True)
 def vocatus_chat(request):

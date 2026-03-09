@@ -1,0 +1,57 @@
+{% load static %}
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bierguru – Studierreis</title>
+  <link rel="stylesheet" href="{% static 'bierguru/css/chat.css' %}" />
+  <style>
+    body {
+      background: #ffe8d6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .study-card {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      width: min(500px, 90vw);
+    }
+
+    .beer {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #CC5500;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="study-card">
+    <div class="beer">🍺</div>
+    <h1>Bierguru is op studiereis</h1>
+    <p>De tap staat even dicht.<br>
+    Binnenkort weer terug met nuchter advies.</p>
+  </div>
+  <footer style="position: fixed; bottom: 15px; width: 100%; text-align: center; font-size: 0.85rem;">
+    <a href="/privacy/" style="color: #CC5500; text-decoration: none;">
+      Privacyverklaring
+    </a>
+  </footer>
+
+</body>
+</html>
